@@ -13,30 +13,37 @@
 </head>
 <body>
 	<div class="container">
-		<form action="{{ route('user.update')}}" method="post" align="center">
-		<input type = "hidden" name = "_token" value = "<?php echo csrf_token() ?>">
-				<div class="form-group">
-					<label for="txtid">ID</label>
-					<input type="text" name="txtid" value="{{$user->id}}" readonly>
-				</div>
-				<div class="form-group">
-					<label for="txtname">name</label>
-					<input type="text" name="txtname" value="{{$user->name}}" >
-				</div>
-				<div class="form-group">
-					<label for="txtemail">email</label>
-					<input type="text" name="txtemail" value="{{$user->email}}" readonly>
-				</div>
-				<div class="form-group">
-					<label for="">Role</label>
-					<select name="txtrole">
-						<option value="0"  @if($user->role==0) selected @endif  >User</option>
-						<option value="1"  @if($user->role==1) selected @endif  >Admin</option>
-						<option value="2"  @if($user->role==2) selected @endif  >superAdmin</option>
-					</select>
-				</div>
-				<button type="submit"  class="btn btn-primary">Submit</button>
-		</form>
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<form action="{{ route('user.update')}}" method="post" align="center">
+				<input type = "hidden" name = "_token" value = "<?php echo csrf_token() ?>">
+					<div class="form-group ">
+						<label for="txtid">ID</label>
+						<input type="text" name="txtid" class="form-control col-md-4"  value="{{$user->id}}" readonly>
+					</div>
+					<div class="form-group ">
+						<label for="txtname">name</label>
+						<input type="text" name="txtname" class="form-control " value="{{$user->name}}" >
+					</div>
+					<div class="form-group ">
+						<label for="txtemail">email</label>
+						<input type="text" name="txtemail" class="form-control " value="{{$user->email}}" readonly>
+					</div>
+					<div class="form-group ">
+						<label for="">Role</label>
+						<select name="txtrole" class="form-control">
+							<option value="0"  @if($user->role==0) selected @endif  >User</option>
+							<option value="1"  @if($user->role==1) selected @endif  >Admin</option>
+							<option value="2"  @if($user->role==2) selected @endif  >superAdmin</option>
+						</select>
+					</div>
+					<button type="submit"  class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+	</div>
+	
+
 	</div>
 </body>
 </html>
