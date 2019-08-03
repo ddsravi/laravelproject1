@@ -23,4 +23,4 @@ Route::get('/update/{id}', 'HomeController@update');
 Route::post('/update','HomeController@userUpdate')->name('user.update');
 
 
-Route::get('/delete/{id}', 'HomeController@delete');
+Route::get('/delete/{id}', 'HomeController@delete')->name('user.delete');
